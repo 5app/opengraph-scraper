@@ -1,7 +1,7 @@
 {
   "name": "@5app/opengraph-scraper",
   "version": "1.0.0",
-  "description": "Description",
+  "description": "Opengraph scraper",
   "main": "index.js",
   "scripts": {
     "lint": "eslint ./",
@@ -42,5 +42,8 @@
     "hooks": {
       "pre-commit": "npm run precommit-msg && npm run lint-diff"
     }
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
