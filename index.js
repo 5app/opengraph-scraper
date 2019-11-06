@@ -5,7 +5,7 @@ const metascraper = require('metascraper')([
 
 const request = require('request');
 
-module.exports = uri => {
+module.exports = async uri => {
 	if (!uri) {
 		return;
 	}
