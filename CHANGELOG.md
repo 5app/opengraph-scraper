@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/5app/opengraph-scraper/compare/v1.0.0...v1.0.1) (2019-11-06)
+
+
+### Bug Fixes
+
+* **publishing:** set access=public ([327ced6](https://github.com/5app/opengraph-scraper/commit/327ced684173c6513f65af4c909d5adc93b950b9))
+
 # 1.0.0 (2019-11-06)
 
 
