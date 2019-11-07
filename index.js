@@ -21,5 +21,5 @@ module.exports = uri => {
 
 	return getUrlData
 		.then(({html, uri}) => metascraper({html, url: uri}))
-		.catch(e => ({error: e}));
+		.catch(error => ({error}));
 };
