@@ -20,3 +20,6 @@ Dependencies:
 - metascraper
 - metascraper-title
 - metascraper-description
+
+ToDo:
+- Current utility only requires title and description, would like in the future for this to handle arbritrary tags, however I do not wish to bloat the module with needless imports for now.
