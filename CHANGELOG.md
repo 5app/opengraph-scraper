@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/5app/opengraph-scraper/compare/v1.1.0...v1.2.0) (2019-11-07)
+
+
+### Features
+
+* **release:** revert to promises ([0846e71](https://github.com/5app/opengraph-scraper/commit/0846e71a36db51be5b1e5d8e1c86499519cb1995))
+
 # [1.1.0](https://github.com/5app/opengraph-scraper/compare/v1.0.1...v1.1.0) (2019-11-07)
 
 
