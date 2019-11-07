@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/5app/opengraph-scraper/compare/v1.0.1...v1.1.0) (2019-11-07)
+
+
+### Features
+
+* **release:** return empty object instead of null ([63d5d68](https://github.com/5app/opengraph-scraper/commit/63d5d684e1f304a0f024c8bb601fe398e662646c))
+
 ## [1.0.1](https://github.com/5app/opengraph-scraper/compare/v1.0.0...v1.0.1) (2019-11-06)
 
 
