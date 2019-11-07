@@ -1,20 +1,22 @@
-# JS Template
+# Opengraph Scraper
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/5app/js-template.svg)](https://greenkeeper.io/)
+This is a utility extending the functionality of the popular [metascraper](https://www.npmjs.com/package/metascraper) library for obtaining metatags from target urls.
 
-This is a template for starting new JS projects at 5app.
+The util acheives this by packing the functionality together with request, to handle fetching and parsing the tags in one place.
 
-## Getting started
+Usage:
+```javascript
+const opengraphScraper = require('@5app/opengraph-scraper');
 
-Run `npm init` to configure package.json
+async function() {
+	const {title, description} = await opengraphScraper();
+	console.log('Title: ', title, '- Description: ', description);
+	// returns {} if no results found.
+}();
+```
 
-
-### For private projects
-
-1. [Optionally] Remove `.npmrc` file.
-   This is used to track dependencies but for published packages this is superfluous
-
-### For packages to be posted to NPM
-
-1. Remove the setting `private: true` from [./package.json](./package.json]).
-   This protects accidentally publishing to *npm*. If you want to publish to npm then this will prevent it until removed.
+Dependencies:
+- request
+- metascraper
+- metascraper-title
+- metascraper-description
