@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/5app/opengraph-scraper/compare/v1.2.0...v1.3.0) (2019-11-07)
+
+
+### Features
+
+* **release:** more thorough timeout ([04790f3](https://github.com/5app/opengraph-scraper/commit/04790f3d954f66f00593a73c22a5912dede932a0))
+
 # [1.2.0](https://github.com/5app/opengraph-scraper/compare/v1.1.0...v1.2.0) (2019-11-07)
 
 
