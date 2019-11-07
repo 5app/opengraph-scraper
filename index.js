@@ -5,7 +5,7 @@ const metascraper = require('metascraper')([
 
 const request = require('request');
 
-module.exports = async uri => {
+module.exports = uri => {
 	if (!uri) {
 		return;
 	}
@@ -13,17 +13,13 @@ module.exports = async uri => {
 	const getUrlData = new Promise((resolve, reject) => {
 		request.get(uri, {timeout: 3000}, (err, response, html) => {
 			if (err) {
-				reject(null);
+				reject({});
 			}
 			resolve({html, uri});
 		});
 	});
 
-	try {
-		const {html, url} = await getUrlData(url);
-		return metascraper({html, url});
-	} catch (e) {
-		// If we cannot get the targetted url, just ignore it and carry on.
-		return {};
-	}
+	return getUrlData
+		.then(({html, uri}) => metascraper({html, url: uri}))
+		.catch(e => ({error: e}));
 };
