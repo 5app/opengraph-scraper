@@ -24,6 +24,6 @@ module.exports = async uri => {
 		return metascraper({html, url});
 	} catch (e) {
 		// If we cannot get the targetted url, just ignore it and carry on.
-		return null;
+		return {};
 	}
 };
