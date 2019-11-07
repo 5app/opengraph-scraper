@@ -5,10 +5,10 @@ This is a utility extending the functionality of the popular [metascraper](https
 The util acheives this by packing the functionality together with request, to handle fetching and parsing the tags in one place.
 
 Usage:
-```javascript
+```typescript
 const opengraphScraper = require('@5app/opengraph-scraper');
 
-async function(url) {
+async function(url: string): object {
 	const {title, description} = await opengraphScraper(url);
 	console.log('Title: ', title, '- Description: ', description);
 	// returns {} if no results found.
