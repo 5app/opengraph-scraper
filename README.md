@@ -8,8 +8,8 @@ Usage:
 ```javascript
 const opengraphScraper = require('@5app/opengraph-scraper');
 
-async function() {
-	const {title, description} = await opengraphScraper();
+async function(url) {
+	const {title, description} = await opengraphScraper(url);
 	console.log('Title: ', title, '- Description: ', description);
 	// returns {} if no results found.
 }();
