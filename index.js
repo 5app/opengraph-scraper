@@ -5,21 +5,26 @@ const metascraper = require('metascraper')([
 
 const request = require('request');
 
-module.exports = uri => {
-	if (!uri) {
+module.exports = ({url, timeout = 3000}) => {
+	if (!url) {
 		return;
 	}
 
 	const getUrlData = new Promise((resolve, reject) => {
-		request.get(uri, {timeout: 3000}, (err, response, html) => {
+		const req = request.get(url, {timeout}, (err, response, html) => {
 			if (err) {
-				reject({});
+				reject();
 			}
-			resolve({html, uri});
+			resolve({html, url});
 		});
+
+		setTimeout(() => {
+			req.abort();
+			reject();
+		}, timeout);
 	});
 
 	return getUrlData
-		.then(({html, uri}) => metascraper({html, url: uri}))
+		.then(({html, url}) => metascraper({html, url}))
 		.catch(error => ({error}));
 };
