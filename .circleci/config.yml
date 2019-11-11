@@ -27,6 +27,7 @@ jobs:
       - run:
           name: install dependencies with npm
           command: npm install
+      - run: npm test
       - save_cache:
           <<: *cache_key
           paths:
