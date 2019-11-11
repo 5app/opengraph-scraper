@@ -1,3 +1,4 @@
+const opengraphScraper = require('../../index.js');
 
 describe('Scraper functionality', async () => {
 	
