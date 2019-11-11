@@ -5,7 +5,7 @@ const metascraper = require('metascraper')([
 
 const request = require('request');
 
-module.exports = ({url, timeout = 3000}) => {
+module.exports = (url, timeout = 3000) => {
 	if (!url) {
 		return;
 	}
