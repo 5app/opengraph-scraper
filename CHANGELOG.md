@@ -1,3 +1,13 @@
+## [1.3.1](https://github.com/5app/opengraph-scraper/compare/v1.3.0...v1.3.1) (2019-11-11)
+
+
+### Bug Fixes
+
+* **ci:** add npm test ([14a361c](https://github.com/5app/opengraph-scraper/commit/14a361c2db2a397847767372a2c48230f2524b1c))
+* **ci:** Merge pull request [#2](https://github.com/5app/opengraph-scraper/issues/2) from 5app/fix-ci-test ([af5627b](https://github.com/5app/opengraph-scraper/commit/af5627b77619c4bd8cea3e7755b8df9bb0ef2126))
+* **ci:** prefix eslintrc with (.) ([a851984](https://github.com/5app/opengraph-scraper/commit/a8519846136d2bd42ff7ec6c457749549aad84e9))
+* **tests:** add eslint rules ([edde657](https://github.com/5app/opengraph-scraper/commit/edde657f62e33fcdd90982d5f312592ac3105d7c))
+
 # [1.3.0](https://github.com/5app/opengraph-scraper/compare/v1.2.0...v1.3.0) (2019-11-07)
 
 
