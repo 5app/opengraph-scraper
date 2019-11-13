@@ -1,23 +1,23 @@
 const opengraphScraper = require('../../index.js');
 
-describe('Scraper functionality', async () => {
+describe('Scraper functionality', () => {
 
-	const correct = await opengraphScraper('https://twitter.com/?lang=en-gb');
-	const incorrect = await opengraphScraper('https://thisisnonsenseical567.com');
-	const large = await opengraphScraper('http://de.releases.ubuntu.com/xenial/ubuntu-16.04.6-desktop-amd64.iso');
-
-	it('should resolve information from commonly accessible public url ', () => {
+	it('should resolve information from commonly accessible public url ', async () => {
+		const correct = await opengraphScraper('https://twitter.com/?lang=en-gb');
 		expect(correct).to.have.property('title');
 		expect(correct).to.have.property('description');
 	});
 
-	it('should not resolve information from a fake url ', () => {
+	it('should not resolve information from a fake url ', async () => {
+		const incorrect = await opengraphScraper('https://thisisnonsenseical567.com');
 		expect(incorrect).to.not.have.property('title');
 		expect(incorrect).to.not.have.property('description');
 	});
 
-	it('should not hang on large files ', () => {
-		expect(large).to.exist();
+	it('should not hang on large files', async () => {
+		const large = await opengraphScraper('http://de.releases.ubuntu.com/xenial/ubuntu-16.04.6-desktop-amd64.iso', 1000);
+
+		expect(large).to.exist.to.have.property('error');
 		expect(large).to.not.have.property('title');
 		expect(large).to.not.have.property('description');
 	});
