@@ -5,26 +5,25 @@ const metascraper = require('metascraper')([
 
 const request = require('request');
 
-module.exports = (url, timeout = 3000) => {
+module.exports = async (url, timeout = 3000) => {
 	if (!url) {
-		return;
+		throw new Error('ogs: missing url parameter');
 	}
 
 	const getUrlData = new Promise((resolve, reject) => {
 		const req = request.get(url, {timeout}, (err, response, html) => {
 			if (err) {
-				reject();
+				reject(err);
 			}
 			resolve({html, url});
 		});
 
 		setTimeout(() => {
 			req.abort();
-			reject();
+			reject(new Error('ogs: timeout'));
 		}, timeout);
 	});
 
 	return getUrlData
-		.then(({html, url}) => metascraper({html, url}))
-		.catch(error => ({error}));
+		.then(({html, url}) => metascraper({html, url}));
 };

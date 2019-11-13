@@ -16,10 +16,9 @@ const timeout = 3000;
 const url = 'https://twitter.com/';
 
 // Returns object
-const {title, description, error} = await opengraphScraper(url, timeout);
-if (error) {
-    // handle error
-}
+const {title, description} = await opengraphScraper(url, timeout);
+
 console.log('Title: ', title, '- Description: ', description);
+
 // Title: 
 ```
