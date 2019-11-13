@@ -1,25 +1,25 @@
 # Opengraph Scraper
 
-This is a utility extending the functionality of the popular [metascraper](https://www.npmjs.com/package/metascraper) library for obtaining metatags from target urls.
+Given a URL will return meta information about the page.
 
-The util acheives this by packing the functionality together with request, to handle fetching and parsing the tags in one place.
+e.g. 
 
 Usage:
 ```typescript
+// Import
 const opengraphScraper = require('@5app/opengraph-scraper');
 
-async function(url: string): object {
-	const {title, description} = await opengraphScraper(url);
-	console.log('Title: ', title, '- Description: ', description);
-	// returns {} if no results found.
-}();
+// Set a timeout in ms
+const timeout = 3000;
+
+// Url
+const url = 'https://twitter.com/';
+
+// Returns object
+const {title, description, error} = await opengraphScraper(url, timeout);
+if (error) {
+    // handle error
+}
+console.log('Title: ', title, '- Description: ', description);
+// Title: 
 ```
-
-Dependencies:
-- request
-- metascraper
-- metascraper-title
-- metascraper-description
-
-ToDo:
-- Current utility only requires title and description, would like in the future for this to handle arbritrary tags, however I do not wish to bloat the module with needless imports for now.
