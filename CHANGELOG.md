@@ -1,3 +1,11 @@
+## [1.3.2](https://github.com/5app/opengraph-scraper/compare/v1.3.1...v1.3.2) (2019-11-13)
+
+
+### Bug Fixes
+
+* **patch:** Merge pull request [#5](https://github.com/5app/opengraph-scraper/issues/5) from 5app/add-spec-test ([3c65cf7](https://github.com/5app/opengraph-scraper/commit/3c65cf7d69d11275e62d32d4cf2354ddd5a54abd))
+* enures function takes a string as initial parameter, refactors tests ([a7db759](https://github.com/5app/opengraph-scraper/commit/a7db75920df4f95752ed095b85b05642cb947f81))
+
 ## [1.3.1](https://github.com/5app/opengraph-scraper/compare/v1.3.0...v1.3.1) (2019-11-11)
 
 
