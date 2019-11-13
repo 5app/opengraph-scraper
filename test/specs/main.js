@@ -30,9 +30,19 @@ describe('Scraper functionality', () => {
 			.rejectedWith(Error, 'ENOTFOUND');
 	});
 
-	it('should not hang on large files', () => {
+	it('should not resolve information from http status greater than 400', () => {
 
-		const url = 'http://de.releases.ubuntu.com/xenial/ubuntu-16.04.6-desktop-amd64.iso';
+		const url = 'https://httpstat.us/400';
+
+		const fn = opengraphScraper(url);
+
+		return expect(fn).to.eventually
+			.rejectedWith(Error, 'ogs: http status: 400');
+	});
+
+	it('should not hang on timeouts', () => {
+
+		const url = 'https://httpstat.us/504?sleep=5000';
 		const fn = opengraphScraper(url, 1000);
 
 		return expect(fn).to.eventually
