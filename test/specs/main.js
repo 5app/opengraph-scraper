@@ -3,22 +3,39 @@ const opengraphScraper = require('../../index.js');
 describe('Scraper functionality', () => {
 
 	it('should resolve information from commonly accessible public url ', async () => {
+
 		const correct = await opengraphScraper('https://twitter.com/?lang=en-gb');
-		expect(correct).to.have.property('title');
-		expect(correct).to.have.property('description');
+
+		expect(correct)
+			.to.have.keys('title', 'description');
 	});
 
-	it('should not resolve information from a fake url ', async () => {
-		const incorrect = await opengraphScraper('https://thisisnonsenseical567.com');
-		expect(incorrect).to.not.have.property('title');
-		expect(incorrect).to.not.have.property('description');
+	it('should reject when URL is missing', async () => {
+
+		const url = '';
+
+		const fn = opengraphScraper(url);
+
+		return expect(fn).to.eventually
+			.rejectedWith(Error, 'ogs: missing url parameter');
 	});
 
-	it('should not hang on large files', async () => {
-		const large = await opengraphScraper('http://de.releases.ubuntu.com/xenial/ubuntu-16.04.6-desktop-amd64.iso', 1000);
+	it('should not resolve information from a fake url ', () => {
 
-		expect(large).to.exist.to.have.property('error');
-		expect(large).to.not.have.property('title');
-		expect(large).to.not.have.property('description');
+		const url = 'https://thisisnonsenseical567.com';
+
+		const fn = opengraphScraper(url);
+
+		return expect(fn).to.eventually
+			.rejectedWith(Error, 'ENOTFOUND');
+	});
+
+	it('should not hang on large files', () => {
+
+		const url = 'http://de.releases.ubuntu.com/xenial/ubuntu-16.04.6-desktop-amd64.iso';
+		const fn = opengraphScraper(url, 1000);
+
+		return expect(fn).to.eventually
+			.rejectedWith(Error, 'ogs: timeout');
 	});
 });
