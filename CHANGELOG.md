@@ -1,3 +1,10 @@
+## [1.4.2](https://github.com/5app/opengraph-scraper/compare/v1.4.1...v1.4.2) (2020-01-22)
+
+
+### Bug Fixes
+
+* **bad requests:** throw on bad requests ([d95c0d5](https://github.com/5app/opengraph-scraper/commit/d95c0d5521a82e9ce420ff83629f27e8c140a00d))
+
 ## [1.4.1](https://github.com/5app/opengraph-scraper/compare/v1.4.0...v1.4.1) (2019-11-13)
 
 
