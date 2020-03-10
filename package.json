@@ -12,6 +12,9 @@
     "spec": "mocha ./test/specs/**/*.js",
     "test": "npm run lint && npm run spec"
   },
+  "files": [
+    "index.js"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/5app/opengraph-scraper.git"
