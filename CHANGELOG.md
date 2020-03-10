@@ -1,3 +1,10 @@
+## [1.4.4](https://github.com/5app/opengraph-scraper/compare/v1.4.3...v1.4.4) (2020-03-10)
+
+
+### Performance Improvements
+
+* **pkg:** reduce npm package files ([a1c48e5](https://github.com/5app/opengraph-scraper/commit/a1c48e5f70286f0e5310012d174dc1889eaec881))
+
 ## [1.4.3](https://github.com/5app/opengraph-scraper/compare/v1.4.2...v1.4.3) (2020-03-10)
 
 
