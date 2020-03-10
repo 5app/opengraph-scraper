@@ -1,6 +1,6 @@
 {
   "name": "@5app/opengraph-scraper",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "description": "Opengraph scraper",
   "main": "index.js",
   "scripts": {

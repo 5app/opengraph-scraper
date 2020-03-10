@@ -1,3 +1,10 @@
+## [1.4.3](https://github.com/5app/opengraph-scraper/compare/v1.4.2...v1.4.3) (2020-03-10)
+
+
+### Bug Fixes
+
+* **deps:** npm update ([2d7aff8](https://github.com/5app/opengraph-scraper/commit/2d7aff839621d656af584c3ab0149268f2d48e25))
+
 ## [1.4.2](https://github.com/5app/opengraph-scraper/compare/v1.4.1...v1.4.2) (2020-01-22)
 
 
