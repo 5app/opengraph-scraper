@@ -1,3 +1,10 @@
+## [1.4.5](https://github.com/5app/opengraph-scraper/compare/v1.4.4...v1.4.5) (2020-08-21)
+
+
+### Bug Fixes
+
+* Update metascraper to fix audit issues ([#24](https://github.com/5app/opengraph-scraper/issues/24)) ([717344a](https://github.com/5app/opengraph-scraper/commit/717344a8d0a6b802dc78299612910ae9ce48d602)), closes [#8449](https://github.com/5app/opengraph-scraper/issues/8449)
+
 ## [1.4.4](https://github.com/5app/opengraph-scraper/compare/v1.4.3...v1.4.4) (2020-03-10)
 
 
