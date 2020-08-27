@@ -1,3 +1,10 @@
+## [1.4.6](https://github.com/5app/opengraph-scraper/compare/v1.4.5...v1.4.6) (2020-08-27)
+
+
+### Bug Fixes
+
+* **deps:** npm audit fix, add package-lock ([0eed667](https://github.com/5app/opengraph-scraper/commit/0eed667de80908aa29876d1b178722a9dd81cd31))
+
 ## [1.4.5](https://github.com/5app/opengraph-scraper/compare/v1.4.4...v1.4.5) (2020-08-21)
 
 
