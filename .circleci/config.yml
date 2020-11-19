@@ -1,52 +1,53 @@
-defaults: &defaults
-  working_directory: ~/repo
-  docker:
-    - image: circleci/node:lts
+version: 2.1
 
-cache_key: &cache_key
-  key: dependency-cache-{{ checksum "package.json" }}
+alias:
+  - &cache_key
+    key: dependency-cache-node-14-{{ checksum "package.json" }}
+  - &dir ~/repo
+  - &attach_workspace
+    attach_workspace:
+          at: *dir
 
-version: 2
+
+executors:
+  default:
+    working_directory: ~/repo
+    docker:
+      - image: circleci/node:14
+
 jobs:
   checkout_code:
-    <<: *defaults
+    executor: default
     steps:
       - checkout
-      - persist_to_workspace:
-          root: ~/repo
-          paths:
-            - .
-
-  test:
-    <<: *defaults
-    steps:
-      - attach_workspace:
-          at: ~/repo
-      - restore_cache: 
+      - restore_cache:
           <<: *cache_key
       - run:
           name: install dependencies with npm
           command: npm install
-      - run: npm test
       - save_cache:
           <<: *cache_key
           paths:
             - ./node_modules
       - persist_to_workspace:
-          root: ~/repo
+          root: *dir
           paths:
-            - node_modules
+            - .
+
+  test:
+    executor: default
+    steps:
+      - *attach_workspace
+      - run: npm test
 
   release:
-    <<: *defaults
+    executor: default
     steps:
-      - attach_workspace:
-          at: ~/repo
+      - *attach_workspace
       - checkout
       - run: npm run semantic-release
 
 workflows:
-  version: 2
   build:
     jobs:
       - checkout_code
