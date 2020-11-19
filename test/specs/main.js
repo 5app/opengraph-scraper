@@ -1,6 +1,11 @@
 const opengraphScraper = require('../../index.js');
+const nock = require('nock');
 
 describe('Scraper functionality', () => {
+
+	afterEach(() => {
+		nock.cleanAll();
+	});
 
 	it('should resolve information from commonly accessible public url ', async () => {
 
@@ -42,7 +47,16 @@ describe('Scraper functionality', () => {
 
 	it('should not hang on timeouts', () => {
 
-		const url = 'https://httpstat.us/504?sleep=5000';
+		nock('https://httpstat.us')
+			.get('/200')
+			.query({
+				sleep: 5000
+			})
+			.reply((uri, requestBody, cb) => {
+				setTimeout(() => cb(null, [201, 'Too late']), 5000);
+			});
+
+		const url = 'https://httpstat.us/200?sleep=5000';
 		const fn = opengraphScraper(url, 1000);
 
 		return expect(fn).to.eventually
